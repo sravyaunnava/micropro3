@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+
+<html>
+<head>
+<title>project</title>
+<meta charset="utf-8>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+</head>
+<body>
+ <section class="content">
+       <center> <b><h2>CRICKET STORE INVENTORY MANAGEMENT<h2></b></center>
+		
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title"><B>Sales DETAILS</b></h3>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+             
+                  <tr>
+                      <th>
+                          Product Id
+                      </th>
+                     
+                      <th>
+                          Name
+                      </th>
+                      <th>
+                          Quantity
+                      </th>
+                      
+					  <th>
+					  Selling Prize
+					  </th>
+					  <th>
+					  Total Sales
+					  </th>
+                  </tr>
+       
+            
+                  
+                     <% for(var i=0;i<data.length;i++) {%>
+					 
+<tr>
+
+<td><%=data[i].pid%></td>
+
+
+<td><%=data[i].name%></td>
+<td><%=data[i].stock%></td>
+
+<td><%=data[i].sp%></td>
+<td><script>
+  var numOne=(<%=data[i].stock%>), numTwo=(<%=data[i].sp%>), res;
+  res = numOne * numTwo;
+  document.write( res )</script></td>
+</tr>
+<% } %>
+              
+          </table>
+     <!--   <a class="print" title="Print" data-toggle="tooltip" href='/sale/print'><i class="material-icons">print</i></a>-->
+         
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  window.addEventListener("load", window.print());
+</script>
+</body>
+</html>
